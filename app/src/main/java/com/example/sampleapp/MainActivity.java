@@ -36,9 +36,10 @@ public class MainActivity extends AppCompatActivity {
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeToRefresh);
         //mListView = (ListView) findViewById(R.id.listView);
 
+        //Setting colour to swipe refresh circle
         mSwipeRefreshLayout.setColorSchemeResources(R.color.teal_700);
 
-
+        //creating new array
         mlist=new ArrayList<>();
         rv=findViewById(R.id.rv);
 
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Get data from json using the data from above used URL
     public class GetData extends AsyncTask<String,String,String> {
 
 
@@ -62,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             try{
+                //Get according to the json file format and putting same id here
                 JSONObject jsonObject=new JSONObject(s);
                 JSONArray jsonArray=jsonObject.getJSONArray("appinfo");
                 for(int i=0;i<jsonArray.length();i++){
@@ -126,6 +129,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+    //set recyclerview adapter so that all necessary data is loaded
     private void PutDataIntoRecyclerView(List<ModelClass> mlist){
         ListAdapter ListAdapter=new ListAdapter(this,mlist);
         rv.setLayoutManager(new LinearLayoutManager(this));

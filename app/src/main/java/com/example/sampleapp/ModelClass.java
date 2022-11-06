@@ -1,6 +1,7 @@
 package com.example.sampleapp;
 
 public class ModelClass {
+    //Here we create a constructor class for accessing data to app
     String id,name,img;
 
     public ModelClass(String id, String name, String img){

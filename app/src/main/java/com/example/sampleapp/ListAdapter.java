@@ -46,10 +46,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> 
             public void onClick(View view) {
                 AlertDialog alertDialog = new AlertDialog.Builder(view.getContext()).create();
 
-/// Here the Tile is being set
+                // Here the Tile is being set
                 //alertDialog.setTitle("Alert Dialog Example.");
 
-/// Here the message content is being set
+                // Here the message content is being set
                 alertDialog.setMessage("Here the description of the image can be displayed");
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                         new DialogInterface.OnClickListener() {
